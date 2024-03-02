@@ -72,8 +72,15 @@ lazy.setup({
         -- add any options here
     },
     lazy = false,
-}
+},
 --{'numToStr/Navigator.nvim', }
+{'lervag/vimtex',
+config = function()
+    vim.cmd([[
+    let g:vimtex_view_method= 'zathura'
+    ]])
+    end
+},
 })
 
 require('Comment').setup()
