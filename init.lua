@@ -15,6 +15,7 @@ vim.opt.scrolloff= 15
 vim.opt.clipboard:append{"unnamedplus", "unnamed"}
 vim.opt.showtabline=0
 vim.g.mapleader = 'ć'
+vim.keymap.set("", "+", function() vim.diagnostic.open_float() end)
 vim.keymap.set("", "<c-j>", "}")
 vim.keymap.set("", "p", "p <cmd>sil! :%s/\\r//g<cr>")
 vim.keymap.set("", "<C-k>", "{")
