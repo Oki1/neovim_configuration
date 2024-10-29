@@ -64,7 +64,6 @@ lazy.setup({
 {'hrsh7th/nvim-cmp'},
 {'L3MON4D3/LuaSnip'},
 {'m4xshen/autoclose.nvim'},
-{"aserowy/tmux.nvim"},
 {'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim' }},
 {'ms-jpq/chadtree', branch='chad', build='python3 -m chadtree deps'},
 {
@@ -88,27 +87,15 @@ require('Comment').setup()
 vim.cmd('colorscheme rose-pine-moon')
 --require("Navigator").setup()
 require("autoclose").setup()
-require("tmux").setup({
-    copy_sync={sync_clipboard = false},
-    navigation = {
-        enable_default_keybindings = false,
-    },
-})
 --Navigator
 --vim.keymap.set({'n', 't'}, '<A-a>', '<cmd> tes:t')
 --vim.keymap.set({'n', 't'}, '<A-d>', '<CMD>NavigatorRight<CR>')
 --vim.keymap.set({'n', 't'}, '<A-w>', '<CMD>NavigatorUp<CR>')
 --vim.keymap.set({'n', 't'}, '<A-s>', '<CMD>NavigatorDown<CR>')
 --tmux
-tmux = require("tmux")
-vim.keymap.set({'n', 't'}, '<C-a>', tmux.move_left)
-vim.keymap.set({'n', 't'}, '<C-w>', tmux.move_top)
-vim.keymap.set({'n', 't'}, '<C-s>', tmux.move_bottom)
-vim.keymap.set({'n', 't'}, '<C-d>', tmux.move_right)
 
 local function vspl()
     vim.cmd("vsplit")
-    tmux.move_right()
 end
 local function hspl()
     vim.cmd("split")
